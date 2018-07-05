@@ -1,0 +1,19 @@
+{
+  "name": "yudedako/blackJackPhp",
+  "description": "blackJack",
+  "authors": [
+    {
+      "name": "Yudedako",
+      "email": "yudedako.red@gmail.com"
+    }
+  ],
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "^7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "BlackJackPhp\\": "src/"
+    }
+  }
+}
