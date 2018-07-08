@@ -19,4 +19,13 @@ final class CardNumber extends Enum
     const ELEVEN   = 11;
     const TWELVE   = 12;
     const THIRTEEN = 13;
+
+    public function __construct($value = null)
+    {
+        if ($value === null) {
+            $value = mt_rand(1, 15);
+        }
+
+        parent::__construct($value);
+    }
 }
