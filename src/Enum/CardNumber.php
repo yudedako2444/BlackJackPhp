@@ -23,7 +23,7 @@ final class CardNumber extends Enum
     public function __construct($value = null)
     {
         if ($value === null) {
-            $value = mt_rand(1, 15);
+            $value = mt_rand(self::ONE, self::THIRTEEN);
         }
 
         parent::__construct($value);
