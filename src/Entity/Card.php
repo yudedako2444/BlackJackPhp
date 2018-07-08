@@ -4,7 +4,8 @@ namespace BlackJackPhp\Entity;
 use BlackJackPhp\Enum\CardNumber;
 use BlackJackPhp\Enum\Suit;
 
-class Card {
+class Card
+{
     /**
      * @var Suit
      */

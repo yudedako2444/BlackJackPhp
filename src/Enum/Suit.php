@@ -2,6 +2,7 @@
 namespace BlackJackPhp\Enum;
 
 use ReflectionObject;
+
 /**
  * トランプのスート
  */
