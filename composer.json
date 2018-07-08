@@ -25,24 +25,24 @@
   },
   "scripts": {
     "test": [
-      "vendor/bin/phpunit tests"
+      "vendor/bin/phpunit"
     ],
     "tests": [
       "@cs",
-      "vendor/bin/phpmd src,tests text ./phpmd.xml",
-      "vendor/bin/phpstan analyse -l max src tests -c phpstan.neon --no-progress",
+      "vendor/bin/phpmd src,tests text ./phpmd.xml --exclude tests",
+      "vendor/bin/phpstan analyse -l max src tests -c phpstan.neon --no-progress --exclude tests",
       "@test"
     ],
     "coverage": [
       "php -dzend_extension=xdebug.so ./vendor/bin/phpunit --coverage-text --coverage-html=build/coverage"
     ],
     "cs": [
-      "vendor/bin/php-cs-fixer fix -v --dry-run",
+      "vendor/bin/php-cs-fixer fix -v --dry-run src",
       "vendor/bin/phpcs --standard=phpcs.xml src;"
     ],
     "cs-fix": [
-      "vendor/bin/php-cs-fixer fix -v",
-      "vendor/bin/phpcbf src tests"
+      "vendor/bin/php-cs-fixer fix -v src",
+      "vendor/bin/phpcbf src"
     ]
   }
 }
