@@ -29,8 +29,8 @@
     ],
     "tests": [
       "@cs",
-      "vendor/bin/phpmd src,tests text ./phpmd.xml --exclude tests",
-      "vendor/bin/phpstan analyse -l max src tests -c phpstan.neon --no-progress --exclude tests",
+      "@md",
+      "@stan",
       "@test"
     ],
     "coverage": [
@@ -43,6 +43,12 @@
     "cs-fix": [
       "vendor/bin/php-cs-fixer fix -v src",
       "vendor/bin/phpcbf src"
+    ],
+    "md": [
+      "vendor/bin/phpmd src,tests text ./phpmd.xml --exclude tests"
+    ],
+    "stan": [
+      "vendor/bin/phpstan analyse -l max src tests -c phpstan.neon --no-progress"
     ]
   }
 }
