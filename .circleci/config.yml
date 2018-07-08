@@ -24,7 +24,7 @@ jobs:
         - ./vendor
         key: v1-dependencies-{{ checksum "composer.json" }}
 
-    - run: ./vendor/bin/phpunit tests
+    - run: composer tests
 workflows:
   version: 2
   build:
