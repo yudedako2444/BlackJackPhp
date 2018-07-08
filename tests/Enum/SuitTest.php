@@ -4,7 +4,7 @@ namespace BlackJackPhp\Enum;
 use PHPUnit\Framework\TestCase;
 use InvalidArgumentException;
 
-class EnumTest extends TestCase
+class SuitTest extends TestCase
 {
     /**
      * @expectedException InvalidArgumentException
@@ -20,5 +20,19 @@ class EnumTest extends TestCase
         $suit = new Suit('spade');
 
         $this->assertSame('spade', $suit->valueOf());
+    }
+
+    public function test_引数を設定しない場合にランダムなスートを生成する()
+    {
+        $suit = new Suit();
+
+        $expectedArray = [
+            'spade',
+            'heart',
+            'club',
+            'diamond',
+        ];
+
+        $this->assertTrue(in_array($suit->valueOf(), $expectedArray, true));
     }
 }
