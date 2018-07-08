@@ -19,15 +19,21 @@ abstract class Enum
         $this->scalar = $value;
     }
 
+    // @codingStandardsIgnoreStart
     final public static function __callStatic($label, $args)
     {
+        // @codingStandardsIgnoreEnd
         $class = get_called_class();
         $const = constant("$class::$label");
         return new $class($const);
     }
 
-    //元の値を取り出すメソッド。
-    //メソッド名は好みのものに変更どうぞ
+
+    /**
+     * 値を取得する
+     *
+     * @return mixed
+     */
     final public function valueOf()
     {
         return $this->scalar;
