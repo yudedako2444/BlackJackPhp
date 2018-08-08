@@ -1,7 +1,7 @@
 <?php
 namespace BlackJackPhp\Entity;
 
-use BlackJackPhp\Enum\CardNumber;
+use BlackJackPhp\CardNumberType\CardNumberType;
 use BlackJackPhp\Enum\Suit;
 
 class Card
@@ -12,23 +12,23 @@ class Card
     private $suit;
 
     /**
-     * @var CardNumber
+     * @var CardNumberType
      */
     private $number;
 
-    public function __construct(Suit $suit, CardNumber $number)
+    public function __construct(Suit $suit, CardNumberType $number)
     {
         $this->suit = $suit;
         $this->number = $number;
     }
 
-    public function getSuit()
+    public function getSuit(): string
     {
         return $this->suit->valueOf();
     }
 
-    public function getNumber()
+    public function getNumber(): array
     {
-        return $this->number->valueOf();
+        return $this->number->getWeight();
     }
 }
