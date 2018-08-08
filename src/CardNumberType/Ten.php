@@ -6,6 +6,6 @@ namespace BlackJackPhp\CardNumberType;
  */
 class Ten extends CardNumberType
 {
-    private $weight = [10];
-    private $name = '10';
+    protected $weight = [10];
+    protected $name = '10';
 }
